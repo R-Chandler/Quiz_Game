@@ -35,7 +35,31 @@ body {
     border-radius: 10px;
     margin-top: 5rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     text-align: center;
+}
+
+.question-box {
+    width: 90%;
+    height: 50%;
+    margin: 5% 5% 0 5%;
+    border-radius: 20px;
+    background-color: blue;
+}
+
+.answer-block {
+    width: 90%;
+    height: 25%;
+    margin: 5%;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.answer {
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: yellow;
 }
