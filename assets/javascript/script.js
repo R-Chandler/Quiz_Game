@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function(){
     let Buttons = document.getElementsByClassName('answer');
-    let questionNumber = 0;
+    let questionIndex = 0;
     
     for (let Button of Buttons) {
         Button.addEventListener('click', function(){
@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
             let selectedAnswer = buttonName;
 
-            checkAnswer(selectedAnswer,questionNumber);
+            checkAnswer(selectedAnswer,questionIndex);
         })
     }
     
     
-    runQuiz(questionNumber);
+    runQuiz(questionIndex);
 })
 
 /* questions*/
@@ -34,23 +34,47 @@ let quizOne = [
 
 /** Runs the quiz. Gets the question details for each question using the question number parameter. Passes this info to the DOM */
 
-function runQuiz(questionNumber) {
-
-    document.getElementById("currentQuestion").innerText = quizOne[questionNumber].question;
-    document.getElementById("answerOne").innerText = quizOne[questionNumber].answerA;
-    document.getElementById("answerTwo").innerText = quizOne[questionNumber].answerB;
-    document.getElementById("answerThree").innerText = quizOne[questionNumber].answerC;
+function runQuiz(questionIndex) {
+    document.getElementById('questionNum').innerText = quizOne[questionIndex].questionNumber;
+    document.getElementById("currentQuestion").innerText = quizOne[questionIndex].question;
+    document.getElementById("answerOne").innerText = quizOne[questionIndex].answerA;
+    document.getElementById("answerTwo").innerText = quizOne[questionIndex].answerB;
+    document.getElementById("answerThree").innerText = quizOne[questionIndex].answerC;
     
 }
 
 /* Checks the answer that has been selected against the correct answer */
 
-function checkAnswer(selectedAnswer,questionNumber){
-    let correctAnswer = quizOne[questionNumber].correctAnswer;
+function checkAnswer(selectedAnswer,questionIndex){
+    let correctAnswer = quizOne[questionIndex].correctAnswer;
+    let questionCount = quizOne.length;
+    let questionNumber = parseInt(document.getElementById("questionNum").innerText);
+    let score = parseInt(document.getElementById("Score").innerText);
+    
+    var questionIndex = questionNumber - 1;
+
     if (selectedAnswer === correctAnswer){
-        console.log("Yay, you are correct!");
+        alert("Yay, you are correct!");
+        if (questionIndex < questionCount) {
+            questionNumber++;
+            score ++;
+            questionIndex ++;
+            document.getElementById("Score").innerText = score;
+            document.getElementById("questionNum").innerText = questionNumber;
+            
+            runQuiz(questionIndex);
+            console.log(questionNumber);
+        } else {
+            alert("Yay, you have finished the quiz, your score is " + score)
+        }
     } else {
-        console.log("The correct answer was: " + correctAnswer + " Try Again :)");
+        alert("The correct answer was: " + correctAnswer + " Try Again :)");
+        
+        runQuiz(questionIndex);
+        console.log(questionNumber);
     }
     
 }
+
+
+/* Score counter function to keep track of questions answered */
