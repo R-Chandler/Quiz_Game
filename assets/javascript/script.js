@@ -66,10 +66,13 @@ function checkAnswer(selectedAnswer){
             runQuiz(questionIndex);
             console.log(questionNumber, correctAnswer, questionIndex);
         } else {
-            alert("Yay, you have finished the quiz, your score is " + score)
+            alert("Yay, you have finished the quiz, your score is " + score);
         }
     } else {
         alert("The correct answer was: " + correctAnswer);
+        questionNumber ++
+        questionIndex ++
+        runQuiz(questionIndex);
         console.log(questionNumber, correctAnswer, questionIndex);
     }
     
