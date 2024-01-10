@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 /* questions*/
 let quizOne = [
-    {"questionNumber":1,"question":"Question 1","answerA":"Answer A 1","answerB":"Answer B 1","answerC":"Answer C 1","correctAnswer":"answerB"},
+    {"questionNumber":1,"question":"Question 1","answerA":"Answer A 1","answerB":"Answer B 1","answerC":"Answer C 1","correctAnswer":"answerA"},
     {"questionNumber":2,"question":"Question 2","answerA":"Answer A 2","answerB":"Answer B 2","answerC":"Answer C 2","correctAnswer":"answerC"},
     {"questionNumber":3,"question":"Question 3","answerA":"Answer A 3","answerB":"Answer B 3","answerC":"Answer C 3","correctAnswer":"answerB"},
     {"questionNumber":4,"question":"Question 4","answerA":"Answer A 4","answerB":"Answer B 4","answerC":"Answer C 4","correctAnswer":"answerC"},
@@ -51,27 +51,27 @@ function checkAnswer(selectedAnswer,questionIndex){
     let questionNumber = parseInt(document.getElementById("questionNum").innerText);
     let score = parseInt(document.getElementById("Score").innerText);
     
-    var questionIndex = questionNumber - 1;
 
     if (selectedAnswer === correctAnswer){
         alert("Yay, you are correct!");
-        if (questionIndex < questionCount) {
+        if (questionIndex <= questionCount) {
             questionNumber++;
             score ++;
             questionIndex ++;
             document.getElementById("Score").innerText = score;
             document.getElementById("questionNum").innerText = questionNumber;
-            
+            correctAnswer = quizOne[questionIndex].correctAnswer;
             runQuiz(questionIndex);
-            console.log(questionNumber);
+            console.log(questionNumber, correctAnswer, questionIndex);
         } else {
             alert("Yay, you have finished the quiz, your score is " + score)
         }
     } else {
         alert("The correct answer was: " + correctAnswer + " Try Again :)");
-        
+        questionNumber++;
+        questionIndex ++;
         runQuiz(questionIndex);
-        console.log(questionNumber);
+        console.log(questionNumber, correctAnswer, questionIndex);
     }
     
 }
