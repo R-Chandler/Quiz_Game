@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             let selectedAnswer = buttonName;
 
-            checkAnswer(selectedAnswer,questionIndex);
+            checkAnswer(selectedAnswer);
         })
     }
     
@@ -45,32 +45,31 @@ function runQuiz(questionIndex) {
 
 /* Checks the answer that has been selected against the correct answer */
 
-function checkAnswer(selectedAnswer,questionIndex){
-    let correctAnswer = quizOne[questionIndex].correctAnswer;
+function checkAnswer(selectedAnswer){
     let questionCount = quizOne.length;
     let questionNumber = parseInt(document.getElementById("questionNum").innerText);
     let score = parseInt(document.getElementById("Score").innerText);
+    var questionIndex = questionNumber - 1;
+    let correctAnswer = quizOne[questionIndex].correctAnswer;
     
 
     if (selectedAnswer === correctAnswer){
-        alert("Yay, you are correct!");
-        if (questionIndex <= questionCount) {
+        if (questionIndex < questionCount) {
             questionNumber++;
             score ++;
             questionIndex ++;
             document.getElementById("Score").innerText = score;
             document.getElementById("questionNum").innerText = questionNumber;
             correctAnswer = quizOne[questionIndex].correctAnswer;
+            
+            alert("Yay, you are correct!");
             runQuiz(questionIndex);
             console.log(questionNumber, correctAnswer, questionIndex);
         } else {
             alert("Yay, you have finished the quiz, your score is " + score)
         }
     } else {
-        alert("The correct answer was: " + correctAnswer + " Try Again :)");
-        questionNumber++;
-        questionIndex ++;
-        runQuiz(questionIndex);
+        alert("The correct answer was: " + correctAnswer);
         console.log(questionNumber, correctAnswer, questionIndex);
     }
     
