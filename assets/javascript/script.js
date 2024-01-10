@@ -2,19 +2,23 @@
 
 document.addEventListener('DOMContentLoaded', function(){
     let Buttons = document.getElementsByClassName('answer');
+    let questionNumber = 0;
     
     for (let Button of Buttons) {
         Button.addEventListener('click', function(){
             let buttonName = this.getAttribute('id');
-            console.log("you clicked answer box:" + buttonName)
+
+            let selectedAnswer = buttonName;
+
+            checkAnswer(selectedAnswer,questionNumber);
         })
     }
     
-    console.log("Yay I work");
+    
+    runQuiz(questionNumber);
 })
 
-/** Questions */
-
+/* questions*/
 let quizOne = [
     {"questionNumber":1,"question":"Question 1","answerA":"Answer A 1","answerB":"Answer B 1","answerC":"Answer C 1","correctAnswer":"answerB"},
     {"questionNumber":2,"question":"Question 2","answerA":"Answer A 2","answerB":"Answer B 2","answerC":"Answer C 2","correctAnswer":"answerC"},
@@ -28,9 +32,25 @@ let quizOne = [
     {"questionNumber":10,"question":"Question 10","answerA":"Answer A 10","answerB":"Answer B 10","answerC":"Answer C 10","correctAnswer":"answerB"}
 ]
 
+/** Runs the quiz. Gets the question details for each question using the question number parameter. Passes this info to the DOM */
 
-let questionNumber = 0
-document.getElementById("currentQuestion").innerText = quizOne[questionNumber].question;
-document.getElementById("answerOne").innerText = quizOne[questionNumber].answerA;
-document.getElementById("answerTwo").innerText = quizOne[questionNumber].answerB;
-document.getElementById("answerThree").innerText = quizOne[questionNumber].answerC;
+function runQuiz(questionNumber) {
+
+    document.getElementById("currentQuestion").innerText = quizOne[questionNumber].question;
+    document.getElementById("answerOne").innerText = quizOne[questionNumber].answerA;
+    document.getElementById("answerTwo").innerText = quizOne[questionNumber].answerB;
+    document.getElementById("answerThree").innerText = quizOne[questionNumber].answerC;
+    
+}
+
+/* Checks the answer that has been selected against the correct answer */
+
+function checkAnswer(selectedAnswer,questionNumber){
+    let correctAnswer = quizOne[questionNumber].correctAnswer;
+    if (selectedAnswer === correctAnswer){
+        console.log("Yay, you are correct!");
+    } else {
+        console.log("The correct answer was: " + correctAnswer + " Try Again :)");
+    }
+    
+}
