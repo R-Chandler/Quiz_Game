@@ -1,6 +1,7 @@
 /* Wait for DOM content to load before any code is executed. */
 
 document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById("overlay").style.display = "none";
     let Buttons = document.getElementsByClassName('answer');
 
     for (let Button of Buttons) {
@@ -90,5 +91,12 @@ function checkAnswer(selectedAnswer) {
 
 /* Function to handle end of quiz questions */
 function    finishQuiz(score){
-    console.log("Final Score:", score);
+    let overlayText = document.getElementById("overlayText");
+    let scorePrefix = "Yay, final score: ";
+    let newOverlayText = scorePrefix.concat(score.toString(), "! :)");
+
+    document.getElementById("overlayText") = newOverlayText;
+    document.getElementById("overlay").style.display = "block";
+
+    console.log(overlayText);
 }
