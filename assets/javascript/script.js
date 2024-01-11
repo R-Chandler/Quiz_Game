@@ -64,11 +64,12 @@ function checkAnswer(selectedAnswer) {
 
             alert("Yay, you are correct!");
             runQuiz(questionIndex);
-            console.log(questionNumber, correctAnswer, questionIndex, questionCount);
+            console.log(questionNumber, correctAnswer, questionIndex, score);
             
         } else {
-            
+            score++;
             alert("Yay, you have finished the quiz, your score is " + score);
+            finishQuiz(score);
         }
     } else {
         if (questionNumber < questionCount) {
@@ -76,14 +77,18 @@ function checkAnswer(selectedAnswer) {
             questionNumber++;
             questionIndex++;
             runQuiz(questionIndex);
-            console.log(questionNumber, correctAnswer, questionIndex);
+            console.log(questionNumber, correctAnswer, questionIndex, score);
         } else {
-            
+            score++;
             alert("Yay, you have finished the quiz, your score is " + score);
+            finishQuiz(score);
         }
     }
 
 }
 
 
-/* Score counter function to keep track of questions answered */
+/* Function to handle end of quiz questions */
+function    finishQuiz(score){
+    console.log("Final Score:", score);
+}
