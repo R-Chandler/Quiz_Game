@@ -142,7 +142,7 @@ body {
     background-color: blueviolet;
     position: absolute;
     z-index: 3;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -256,7 +256,7 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        margin: 20px 0;
+        margin: 10px 0;
     }
 
     .answer h2 {
@@ -276,6 +276,23 @@ body {
 
     .title h1 {
         font-size: 30px;
+    }
+
+    .quiz-area {
+        width: 95vw;
+    }
+
+    .question {
+        font-size: 2em;
+    }
+
+    .answer-block {
+        height: 45%;
+    }
+
+    .answer {
+        height: 25%;
+        margin: 0;
     }
 
     .overlay {
@@ -310,6 +327,32 @@ body {
 }
 
 @media screen and (max-width:400px) {
+
+    .question {
+        font-size: 1.5em;
+    }
+
+    .results-box {
+        height: 30%;
+    }
+
+    .score-box {
+        height: 70%;
+        padding: 5px;
+    }
+
+    .score-box h3 {
+        font-size: 1em;
+    }
+
+    .score-box h2 {
+        font-size: 1.25em;
+        margin-top: 5px;
+    }
+
+    .score-box p {
+        font-size: 1em;
+    }
 
     .overlay h3 {
         padding: 10px;

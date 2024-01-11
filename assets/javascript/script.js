@@ -1,7 +1,7 @@
 /* Wait for DOM content to load before any code is executed. */
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById("overlay").style.display = "none";
+
     let Buttons = document.getElementsByClassName('answer');
 
     for (let Button of Buttons) {
