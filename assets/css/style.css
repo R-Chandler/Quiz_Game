@@ -1,5 +1,5 @@
 body {
-    background-color: #78DFEB;
+    background-color: #5BAAB3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +31,7 @@ body {
 .quiz-area {
     width: 70vw;
     aspect-ratio : 8 / 4;
-    background-color: antiquewhite;
+    background-color: #667173;
     border-radius: 10px;
     margin-top: 5rem;
     display: flex;
@@ -47,14 +47,15 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: blue;
+    background-color: #667173;
 }
 
 .question-box {
     width: 75%;
     height: 100%;
+    border: 2px solid black;
     border-radius: 20px;
-    background-color: green;
+    background-color: antiquewhite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +75,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: grey;
+    background-color: #667173;
 }
 
 .score-box {
@@ -82,6 +83,7 @@ body {
     height: 40%;
     border: 2px solid black;
     border-radius: 20px;
+    background-color: antiquewhite;
 }
 
 .score-box h3 {
@@ -106,7 +108,7 @@ body {
     width: 90%;
     height: 25%;
     margin: 5%;
-    background-color: red;
+    background-color: #667173;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -115,8 +117,9 @@ body {
 .answer {
     width: 30%;
     height: 100%;
+    border: 2px solid black;
     border-radius: 20px;
-    background-color: yellow;
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,7 +142,7 @@ body {
     margin: 12% 5% 5%;
     border-radius: 20px;
     border: 5px solid black;
-    background-color: blueviolet;
+    background-color: #889699;
     position: absolute;
     z-index: 3;
     display: none;
@@ -187,6 +190,7 @@ body {
     min-height: 30%;
     margin: 5px;
     border-radius: 10px;
+    background-color: antiquewhite;
     box-shadow: 5px 5px grey;
     font-size: 16px;
     font-weight: bold;
@@ -235,6 +239,7 @@ body {
 
     .score-box {
         height: 80%;
+        width: 45%;
     }
 
     .question-box{
