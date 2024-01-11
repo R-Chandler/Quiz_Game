@@ -134,10 +134,11 @@ body {
 }
 
 .overlay {
-    height: 70vh;
+    height: 75vh;
     width: 90vw;
-    margin: 15% 5% 5%;
+    margin: 12% 5% 5%;
     border-radius: 20px;
+    border: 5px solid black;
     background-color: blueviolet;
     position: absolute;
     z-index: 3;
@@ -145,26 +146,40 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    box-shadow: 10px 10px 5px 5px grey;
 }
 
 .overlay h1 {
     font-size: 3rem;
+    text-align: center;
 }
 
 .overlay p {
     font-size: 2rem;
+    padding: 15px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    text-align: center;
 }
 
 .overlay h3 {
     font-size: 2.5rem;
+    width: 80%;
+    padding: 20px;
+    margin: 10px;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .quiz-buttons {
-    height: 40%;
+    height: 50%;
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-content: flex-end;
+    margin-top: 5%;
 }
 
 .quiz-buttons button {
@@ -172,6 +187,10 @@ body {
     min-height: 30%;
     margin: 5px;
     border-radius: 10px;
+    box-shadow: 5px 5px grey;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
 }
 
 @media screen and (max-width:1500px) {
@@ -189,6 +208,10 @@ body {
     .quiz-area {
         width: 90vw;
         margin-top: 2.5rem;
+    }
+
+    .overlay {
+        margin: 15% 5% 5%;
     }
 
 }
@@ -239,4 +262,62 @@ body {
     .answer h2 {
         padding: 0 20px;
     }
+
+    .overlay {
+        margin: 25% 5% 0 5%;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    .title {
+        width: 90vw;
+    }
+
+    .title h1 {
+        font-size: 30px;
+    }
+
+    .overlay {
+        margin: 35% 2.5% 0 2.5%;
+        justify-content: space-around;
+    }
+
+    .overlay h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+
+    .overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .quiz-buttons {
+        height: 40%;
+    }
+
+    .quiz-buttons button {
+        width: 40%;
+        min-height: 20%;
+        margin: 5px;
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+
+    .overlay h3 {
+        padding: 10px;
+    }
+
+    .quiz-buttons button {
+        min-height: 15%;
+        font-size: 14px;
+    }
+
 }
