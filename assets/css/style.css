@@ -197,6 +197,13 @@ body {
     text-align: center;
 }
 
+#closeOverlay {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+}
+
 @media screen and (max-width:1500px) {
 
     .title {
@@ -218,17 +225,6 @@ body {
         margin: 15% 5% 5%;
     }
 
-}
-
-#quizTitle {
-    display: none;
-}
-
-#closeOverlay {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 20px;
 }
 
 @media screen and (max-width:1000px) {

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let buttonName = this.getAttribute('id');
                 let selectedAnswer = buttonName;
 
-                checkAnswer(quizNum, selectedAnswer);
+                checkAnswer(selectedAnswer);
             } else {
                 let quizType = this.getAttribute('data-type');
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    runQuiz(quizNum, 0);
+    runQuiz(quizOne, 0);
 })
 
 /* questions*/
@@ -91,12 +91,12 @@ function runQuiz(quizNum, questionIndex) {
 
 /* Checks the answer that has been selected against the correct answer, iterates through questions and incriments score*/
 
-function checkAnswer(quizNum, selectedAnswer) {
+function checkAnswer(selectedAnswer) {
     let questionCount = 10;
     let questionNumber = parseInt(document.getElementById("questionNum").innerText);
     let score = parseInt(document.getElementById("Score").innerText);
     var questionIndex = questionNumber - 1;
-    let correctAnswer = quizNum[questionIndex].correctAnswer;
+    let correctAnswer = quizOne[questionIndex].correctAnswer;
 
 
     if (selectedAnswer === correctAnswer) {
@@ -107,11 +107,11 @@ function checkAnswer(quizNum, selectedAnswer) {
             questionIndex++;
             document.getElementById("Score").innerText = score;
             document.getElementById("questionNum").innerText = questionNumber;
-            correctAnswer = quizNum[questionIndex].correctAnswer;
+            correctAnswer = quizOne[questionIndex].correctAnswer;
 
             alert("Yay, you are correct!");
-            runQuiz(quizNum, questionIndex);
-            console.log(quizNum, questionNumber, correctAnswer, questionIndex, score);
+            runQuiz(quizOne, questionIndex);
+            console.log(questionNumber, correctAnswer, questionIndex, score);
             
         } else {
             score++;
@@ -123,7 +123,7 @@ function checkAnswer(quizNum, selectedAnswer) {
             alert("The correct answer was: " + correctAnswer);
             questionNumber++;
             questionIndex++;
-            runQuiz(quizNum, questionIndex);
+            runQuiz(quizOne, questionIndex);
             console.log(questionNumber, correctAnswer, questionIndex, score);
         } else {
             score++;
@@ -146,6 +146,8 @@ function    finishQuiz(score){
 
 }
 
+
 function closeOverlay(){
     document.getElementById("overlay").style.display = "none";
 }
+
