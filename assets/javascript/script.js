@@ -96,11 +96,14 @@ function checkAnswer(selectedAnswer) {
 
 /* Function to handle end of quiz, will display an overlay and inject text to the DOM */
 function    finishQuiz(score){
-    let overlayText = document.getElementById("overlayText");
-    let newOverlayText = `Final score: ${score}!`;
-
-    overlayText = newOverlayText;
-    document.getElementById("overlay").style.display = "flex";
+    let newOverlayText = `Final score: ${score}`;
 
     console.log(overlayText);
+
+    document.getElementById("overlay").style.display = "flex";
+
+    document.getElementById("overlayText").innerText = newOverlayText;
+
+    console.log(overlayText);
+
 }
