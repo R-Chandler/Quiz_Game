@@ -220,6 +220,10 @@ body {
 
 }
 
+#quizTitle {
+    display: none;
+}
+
 #closeOverlay {
     position: absolute;
     top: 5px;
