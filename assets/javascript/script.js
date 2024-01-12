@@ -6,11 +6,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (let Button of Buttons) {
         Button.addEventListener('click', function () {
-            let buttonName = this.getAttribute('id');
+            if (this.getAttribute('data-type') === 'answer') {
+                let buttonName = this.getAttribute('id');
 
-            let selectedAnswer = buttonName;
+                let selectedAnswer = buttonName;
 
-            checkAnswer(selectedAnswer);
+                checkAnswer(selectedAnswer);
+            } else {
+                let quizType = this.getAttribute('data-type');
+                console.log('quiz type is ' + quizType);
+            }
         })
     }
 
@@ -92,12 +97,10 @@ function checkAnswer(selectedAnswer) {
 /* Function to handle end of quiz, will display an overlay and inject text to the DOM */
 function    finishQuiz(score){
     let overlayText = document.getElementById("overlayText");
-    let scorePrefix = "Yay, final score: ";
-    let scoreSuffix = score.toString();
-    let newOverlayText = scorePrefix + scoreSuffix;
+    let newOverlayText = `Final score: ${score}!`;
 
     overlayText = newOverlayText;
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.display = "flex";
 
     console.log(overlayText);
 }
