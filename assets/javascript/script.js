@@ -145,7 +145,3 @@ function    finishQuiz(score){
     document.getElementById("overlayTitle").innerText = newOverlayTitle;
 
 }
-
-function closeOverlay(){
-    document.getElementById("overlay").style.display = "none";
-}
