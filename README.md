@@ -1,4 +1,4 @@
-# Rebellion Ink
+# Quiz Master
 
 
 
@@ -39,8 +39,9 @@
 ## Technologies Used
 - HTML5
 - CSS3
+- JavaScript
 - GitHub
-- Code Anywhere
+- GitPod
 - Font Awesome
 ## Testing
 ### HTML Validation
