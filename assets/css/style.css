@@ -11,19 +11,20 @@ body {
 }
 
 .title {
-    height: 100px;
+    height: 10vh;
     margin: 20px;
     width: 50vw;
 }
 
 .title h1 {
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Lobster', sans-serif;
     letter-spacing: 1px;
     border: 5px solid;
     border-radius: 30px;
+    margin: 0;
     padding: 20px;
 }
 
@@ -252,12 +253,29 @@ body {
 
     .question-box{
         width: 100%;
+        height: 60%;
+    }
+
+    .question {
+        font-size: 1.75em;
+    }
+
+    .question-count {
+        height: 50%;
+    }
+
+    .score-count {
+        height: 50%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .answer-block {
         width: 90%;
         height: 35%;
-        margin: 5%;
+        margin: 0;
         flex-direction: column;
         justify-content: space-between;
         padding: 10px;
@@ -269,7 +287,7 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        margin: 10px 0;
+        margin: 5px 0;
     }
 
     .answer h2 {
@@ -293,10 +311,11 @@ body {
 
     .quiz-area {
         width: 95vw;
+        margin-top: 2rem;
     }
 
-    .question {
-        font-size: 2em;
+    .quiz-block {
+        margin: 5%;
     }
 
     .answer-block {
